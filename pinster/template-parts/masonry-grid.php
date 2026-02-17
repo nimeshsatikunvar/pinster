@@ -79,6 +79,14 @@ if ( '' !== $current_style && taxonomy_exists( 'resume_style' ) ) {
 	<?php if ( $query->have_posts() ) : ?>
 		<ul class="pinster-grid" role="list">
 			<?php
+			$rendered_ids = array();
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				$post_id      = get_the_ID();
+				if ( in_array( $post_id, $rendered_ids, true ) ) {
+					continue;
+				}
+				$rendered_ids[] = $post_id;
 			while ( $query->have_posts() ) {
 				$query->the_post();
 				$post_id      = get_the_ID();
