@@ -32,9 +32,14 @@ if ( ! $action_url || is_wp_error( $action_url ) ) {
 		</p>
 		<form class="pinster-hero-search" role="search" method="get" action="<?php echo esc_url( $action_url ); ?>">
 			<label for="pinster-search-input" class="pinster-sr-only"><?php esc_html_e( 'Search templates', 'pinster' ); ?></label>
-			<input type="search" id="pinster-search-input" class="pinster-search-input" name="s" value="<?php echo esc_attr( $search_value ); ?>" placeholder="<?php esc_attr_e( 'Search templates...', 'pinster' ); ?>" />
-			<button type="submit" class="pinster-search-submit"><?php esc_html_e( 'Search', 'pinster' ); ?></button>
+			<input type="search" id="pinster-search-input" class="pinster-search-input" name="s" value="<?php echo esc_attr( $search_value ); ?>" placeholder="<?php esc_attr_e( 'Search templates, roles, and styles...', 'pinster' ); ?>" />
+			<button type="submit" class="pinster-search-submit"><?php esc_html_e( 'Find Template', 'pinster' ); ?></button>
 		</form>
+		<ul class="pinster-hero-meta" aria-label="<?php esc_attr_e( 'Platform highlights', 'pinster' ); ?>">
+			<li><?php esc_html_e( 'Premium curated designs', 'pinster' ); ?></li>
+			<li><?php esc_html_e( 'Instant Word & PDF downloads', 'pinster' ); ?></li>
+			<li><?php esc_html_e( 'ATS-friendly layouts', 'pinster' ); ?></li>
+		</ul>
 	</div>
 	<?php do_action( 'pinster_after_hero' ); ?>
 </section>
